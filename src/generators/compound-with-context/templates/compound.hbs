@@ -1,0 +1,23 @@
+import { type ReactNode } from "react"
+import { type {{pascalCase name}}ContextValue } from "./context"
+
+{{#each components}}
+import { {{pascalCase this}} } from './parts/{{kebabCase this}}';
+{{/each}}
+import { {{pascalCase name}}Provider } from './context';
+
+type {{pascalCase name}}Props = {
+  children: ReactNode;
+  contextValue: {{pascalCase name}}ContextValue
+};
+
+export const {{pascalCase name}} = ({ children, contextValue }: {{pascalCase name}}Props) => {
+ 
+ return (
+    <{{pascalCase name}}Provider value={contextValue}>
+      {children}
+    </{{pascalCase name}}Provider>
+  );
+};
+
+{{> attach-components components=components name=name}}

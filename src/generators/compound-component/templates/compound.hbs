@@ -1,0 +1,7 @@
+{{#each components}}
+import { {{pascalCase this}} } from './parts/{{kebabCase this}}';
+{{/each}}
+
+{{> function-start componentName=name}}{{> function-body}}{{> function-end}}
+
+{{> attach-components components=components name=name}}

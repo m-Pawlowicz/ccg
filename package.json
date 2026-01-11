@@ -1,0 +1,23 @@
+{
+  "name": "rccg",
+  "version": "0.0.1",
+  "description": "A project utilizing Plop.js for generating components, pages, and services.",
+  "type": "module",
+  "bin": {
+    "rccg": "cli.ts"
+  },
+  "scripts": {
+    "plop": "plop"
+  },
+  "dependencies": {
+    "plop": "^3.0.0",
+    "tsx": "^4.21.0"
+  },
+  "author": "mpawlowicz",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^25.0.6",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}

@@ -1,0 +1,7 @@
+import { use{{pascalCase parentName}}Context } from '../context';
+
+{{> function-start componentName=componentName}}
+  const context = use{{pascalCase parentName}}Context();
+
+  return <>{{pascalCase componentName}}</>;
+{{> function-end}}
