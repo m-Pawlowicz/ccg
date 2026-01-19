@@ -1,10 +1,10 @@
 import { type ReactNode } from "react"
-import { type {{pascalCase name}}ContextValue } from "./context"
+import { type {{pascalCase name}}ContextValue } from "./{{kebabCase name}}-context"
 
 {{#each components}}
-import { {{pascalCase this}} } from './parts/{{kebabCase this}}';
+import { {{pascalCase this}} } from './parts/{{kebabCase ../name}}-{{kebabCase this}}';
 {{/each}}
-import { {{pascalCase name}}Provider } from './context';
+import { {{pascalCase name}}Provider } from './{{kebabCase name}}-context';
 
 type {{pascalCase name}}Props = {
   children: ReactNode;

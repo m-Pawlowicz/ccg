@@ -7,7 +7,7 @@ type SetGeneratorPayload = {
 };
 
 export const getCompoundWithContextGenerator = (
-  plop: NodePlopAPI
+  plop: NodePlopAPI,
 ): SetGeneratorPayload => {
   return {
     name: "context",
@@ -29,7 +29,7 @@ export const getCompoundWithContextGenerator = (
                 input
                   .split(",")
                   .map((s) => s.trim())
-                  .filter(Boolean)
+                  .filter(Boolean),
               ),
             ];
           },
@@ -45,18 +45,21 @@ export const getCompoundWithContextGenerator = (
               "generators",
               "compound-with-context",
               "templates",
-              "compound.hbs"
+              "compound.hbs",
             ),
           },
           {
             type: "add",
-            path: path.join("{{kebabCase name}}", "context.tsx"),
+            path: path.join(
+              "{{kebabCase name}}",
+              "{{kebabCase name}}-context.tsx",
+            ),
             templateFile: path.join(
               "src",
               "generators",
               "compound-with-context",
               "templates",
-              "context.hbs"
+              "context.hbs",
             ),
           },
           {
@@ -67,7 +70,7 @@ export const getCompoundWithContextGenerator = (
               "generators",
               "compound-with-context",
               "templates",
-              "index.hbs"
+              "index.hbs",
             ),
           },
         ];
@@ -77,16 +80,16 @@ export const getCompoundWithContextGenerator = (
           actions.push({
             type: "add",
             path: path.join(
-              plop.getHelper("kebabCase")(data.name),
+              "{{kebabCase name}}",
               "parts",
-              `${plop.getHelper("kebabCase")(component)}.tsx`
+              `{{kebabCase name}}-${plop.getHelper("kebabCase")(component)}.tsx`,
             ),
             templateFile: path.join(
               "src",
               "generators",
               "compound-with-context",
               "templates",
-              "sub-component.hbs"
+              "sub-component.hbs",
             ),
             data: { componentName: component, parentName: data.name },
           });
