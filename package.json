@@ -1,6 +1,6 @@
 {
   "name": "rccg",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A project utilizing Plop.js for generating components, pages, and services.",
   "type": "module",
   "bin": {
